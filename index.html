@@ -53,14 +53,11 @@
 
   <!-- ================= HERO INTRO BANNER ================= -->
   <header id="home" class="min-height-[100vh] h-screen w-full flex flex-col justify-center items-center px-6 pt-16 relative overflow-hidden">
-    <!-- Profile Background Photo aligned to the Right with subtle fades -->
-    <div class="absolute top-0 right-[-5%] md:right-[-12%] w-full md:w-[70%] h-[72vh] md:h-[75vh] z-0 pointer-events-none overflow-hidden select-none">
-      <img src="https://i.ibb.co/nMd03HC8/c1339783e33c.png" alt="Abhishek Jain Background" class="w-full h-full object-cover object-right-top opacity-[0.92] filter grayscale contrast-[1.25]" />
-      <!-- Left-to-Right gradient (Black on the left for text readability, fading to transparent on the right) -->
-      <div class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent z-[1]"></div>
-      <!-- Right-to-Left gradient (Very subtle fade from the right edge) -->
-      <div class="absolute inset-0 bg-gradient-to-l from-black/20 to-transparent z-[1]"></div>
-      <!-- Bottom-to-Top gradient -->
+    <!-- Profile Background Photo with Left-to-Right and Top-to-Bottom Fades -->
+    <div class="absolute top-0 left-[-8%] md:left-[-18%] w-full md:w-[70%] h-[72vh] md:h-[75vh] z-0 pointer-events-none overflow-hidden select-none">
+      <img src="https://i.ibb.co/nMd03HC8/c1339783e33c.png" alt="Abhishek Jain Background" class="w-full h-full object-cover object-left-top opacity-[0.92] filter grayscale contrast-[1.25]" />
+      <!-- Radial/Linear Gradients to mask the borders -->
+      <div class="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 via-black/75 to-black z-[1]"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-black via-black/5 to-transparent z-[1]"></div>
     </div>
 

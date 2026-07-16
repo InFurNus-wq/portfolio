@@ -453,7 +453,7 @@
 
     let currentPillarId = '';
     const pillarList = ['formal-event', 'parties', 'portraits', 'product', 'travel', 'wildlife'];
-    let hasSwipedOnce = localStorage.getItem('portfolioHasSwipedOnce') === 'true';
+    let hasSwipedOnce = false;
     const pillarMetadata = {
       'formal-event': { title: 'Formal Events Showcase', cover: 'https://i.ibb.co/FLVBtfmk/e1c72d621a5a.jpg' },
       'parties': { title: 'Parties Portfolio', cover: 'https://i.ibb.co/MDBr4sk8/c05ce353def5.jpg' },
@@ -620,9 +620,6 @@
       // Swipe/navigation done once successfully!
       if (!hasSwipedOnce) {
         hasSwipedOnce = true;
-        try {
-          localStorage.setItem('portfolioHasSwipedOnce', 'true');
-        } catch(e) {}
       }
 
       const currentIndex = pillarList.indexOf(currentPillarId);

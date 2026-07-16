@@ -218,6 +218,11 @@
             Category
           </h2>
         </div>
+        
+        <!-- Swipe indicator label for mobile navigation -->
+        <div class="absolute bottom-6 right-6 z-[3] md:hidden flex items-center gap-1.5 bg-black/60 border border-neutral-800 backdrop-blur-md px-3 py-1.5 rounded-full text-neutral-400 text-[10px] font-mono tracking-widest uppercase select-none pointer-events-none">
+          <span>← Swipe Cover to Browse →</span>
+        </div>
       </div>
       
       <!-- Right Column: Pop Up Box Area -->
@@ -645,12 +650,13 @@
     
     document.addEventListener('DOMContentLoaded', () => {
       const modal = document.getElementById('showcaseModal');
+      const banner = document.getElementById('modalBanner');
       
-      modal.addEventListener('touchstart', e => {
+      banner.addEventListener('touchstart', e => {
         touchstartX = e.changedTouches[0].screenX;
       }, { passive: true });
       
-      modal.addEventListener('touchend', e => {
+      banner.addEventListener('touchend', e => {
         touchendX = e.changedTouches[0].screenX;
         handleSwipe();
       }, { passive: true });

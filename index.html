@@ -1,0 +1,608 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhishek Jain — Portfolio</title>
+  <meta name="description" content="Selected work and digital experiments by Abhishek Jain.">
+  <!-- Tailwind CSS Engine CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Stark Mono and Sans Font Definition -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+    }
+    .mono-accent {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    /* Custom dark scrollbar styling for showcase slate area */
+    .modal-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .modal-scroll::-webkit-scrollbar-track {
+      background: #0d0d0d;
+    }
+    .modal-scroll::-webkit-scrollbar-thumb {
+      background: #262626;
+      border-radius: 3px;
+    }
+    .modal-scroll::-webkit-scrollbar-thumb:hover {
+      background: #404040;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-white selection:text-black">
+
+  <!-- ================= HEADER / NAV NAVIGATION ================= -->
+  <nav class="fixed top-0 left-0 w-full z-40 bg-black/80 backdrop-blur-md border-b border-neutral-900 px-6 py-4 flex justify-between items-center mono-accent text-neutral-400">
+    <div class="flex gap-8">
+      <a href="#works" class="hover:text-white transition-colors">Work</a>
+    </div>
+    <div class="text-white text-sm font-bold tracking-normal font-sans">ABHISHEK JAIN</div>
+    <div class="flex gap-8">
+      <a href="#contact" class="hover:text-white transition-colors">Contact Me</a>
+    </div>
+  </nav>
+
+  <!-- ================= HERO INTRO BANNER ================= -->
+  <header id="home" class="min-height-[100vh] h-screen w-full flex flex-col justify-center items-center px-6 pt-16 relative overflow-hidden">
+    <!-- Profile Background Photo with Left-to-Right and Top-to-Bottom Fades -->
+    <div class="absolute top-0 left-[-8%] md:left-[-18%] w-full md:w-[70%] h-[72vh] md:h-[75vh] z-0 pointer-events-none overflow-hidden select-none">
+      <img src="img/abhishek/profile.png" alt="Abhishek Jain Background" class="w-full h-full object-cover object-left-top opacity-[0.92] filter grayscale contrast-[1.25]" />
+      <!-- Radial/Linear Gradients to mask the borders -->
+      <div class="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 via-black/75 to-black z-[1]"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/5 to-transparent z-[1]"></div>
+    </div>
+
+    <div class="max-w-4xl text-center space-y-6 relative z-10">
+      <h1 class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-white uppercase leading-none">
+        Abhishek Jain
+      </h1>
+      <p class="text-neutral-400 text-sm md:text-base max-w-2xl mx-auto leading-relaxed font-light tracking-wide">
+        Hello, I’m Abhishek , based in New Delhi, I’m a 20-year-old finance student who lives for visual experimentation. For me, photography and filmmaking are all about narrative depth. I specialize in freezing the high-energy atmosphere of live events, capturing the real character behind a portrait, and documenting the world when I travel. I don't just want to take pictures , I want to create striking pieces of art that make you feel like you were standing right there with me.
+      </p>
+      <div class="pt-4 flex justify-center gap-4">
+        <a href="#works" class="inline-block border border-neutral-800 hover:border-white px-6 py-2.5 text-xs uppercase tracking-widest font-mono transition-colors rounded-sm text-neutral-300 hover:text-white">
+          Explore Works ↓
+        </a>
+        <button onclick="openAchievements()" class="inline-block border border-neutral-800 hover:border-white px-6 py-2.5 text-xs uppercase tracking-widest font-mono transition-colors rounded-sm text-neutral-300 hover:text-white cursor-pointer">
+          Achievements
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= 6-PILLAR DYNAMIC WORKS GRID ================= -->
+  <section id="works" class="p-6 pt-24 border-t border-neutral-950 max-w-7xl mx-auto w-full">
+    <div class="flex flex-col md:flex-row gap-3 md:gap-4 h-[75vh] md:h-[75vh] w-full overflow-hidden">
+      
+      <!-- Pillar 1: Formal Events -->
+      <div class="flex-1 min-w-0 h-full flex flex-col group cursor-pointer transition-all duration-500 ease-in-out hover:flex-[2.5] md:hover:flex-[3]" onclick="openShowcase('formal-event', 'Formal Events Showcase', 'img/formal-event/IMG_2414.jpg')">
+        <div class="overflow-hidden bg-neutral-900 flex-1 relative border border-neutral-900 transition-colors group-hover:border-neutral-700">
+          <img src="img/formal-event/IMG_2414.jpg" alt="Formal Events" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+        </div>
+        <div class="mt-1.5 md:mt-3 flex justify-between items-baseline mono-accent text-neutral-500">
+          <h3 class="text-neutral-200 font-sans font-medium tracking-normal text-sm capitalize truncate">Formal Events</h3>
+          <span class="text-[10px] group-hover:text-[#35d4c5] transition-colors whitespace-nowrap hidden sm:inline">[ View ]</span>
+        </div>
+      </div>
+
+      <!-- Pillar 2: Parties -->
+      <div class="flex-1 min-w-0 h-full flex flex-col group cursor-pointer transition-all duration-500 ease-in-out hover:flex-[2.5] md:hover:flex-[3]" onclick="openShowcase('parties', 'Parties Portfolio', 'img/parties/DSC_9334.JPG')">
+        <div class="overflow-hidden bg-neutral-900 flex-1 relative border border-neutral-900 transition-colors group-hover:border-neutral-700">
+          <img src="img/parties/DSC_9334.JPG" alt="Parties" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+        </div>
+        <div class="mt-1.5 md:mt-3 flex justify-between items-baseline mono-accent text-neutral-500">
+          <h3 class="text-neutral-200 font-sans font-medium tracking-normal text-sm capitalize truncate">Parties</h3>
+          <span class="text-[10px] group-hover:text-[#35d4c5] transition-colors whitespace-nowrap hidden sm:inline">[ View ]</span>
+        </div>
+      </div>
+
+      <!-- Pillar 3: Portraits -->
+      <div class="flex-1 min-w-0 h-full flex flex-col group cursor-pointer transition-all duration-500 ease-in-out hover:flex-[2.5] md:hover:flex-[3]" onclick="openShowcase('portraits', 'Portraits Collection', 'img/portraits/_DSC6450.jpg')">
+        <div class="overflow-hidden bg-neutral-900 flex-1 relative border border-neutral-900 transition-colors group-hover:border-neutral-700">
+          <img src="img/portraits/_DSC6450.jpg" alt="Portraits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+        </div>
+        <div class="mt-1.5 md:mt-3 flex justify-between items-baseline mono-accent text-neutral-500">
+          <h3 class="text-neutral-200 font-sans font-medium tracking-normal text-sm capitalize truncate">Portraits</h3>
+          <span class="text-[10px] group-hover:text-[#35d4c5] transition-colors whitespace-nowrap hidden sm:inline">[ View ]</span>
+        </div>
+      </div>
+
+      <!-- Pillar 4: Product -->
+      <div class="flex-1 min-w-0 h-full flex flex-col group cursor-pointer transition-all duration-500 ease-in-out hover:flex-[2.5] md:hover:flex-[3]" onclick="openShowcase('product', 'Commercial Product Gallery', 'img/product/DSC_9466.JPG')">
+        <div class="overflow-hidden bg-neutral-900 flex-1 relative border border-neutral-900 transition-colors group-hover:border-neutral-700">
+          <img src="img/product/DSC_9466.JPG" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+        </div>
+        <div class="mt-1.5 md:mt-3 flex justify-between items-baseline mono-accent text-neutral-500">
+          <h3 class="text-neutral-200 font-sans font-medium tracking-normal text-sm capitalize truncate">Product</h3>
+          <span class="text-[10px] group-hover:text-[#35d4c5] transition-colors whitespace-nowrap hidden sm:inline">[ View ]</span>
+        </div>
+      </div>
+
+      <!-- Pillar 5: Travel -->
+      <div class="flex-1 min-w-0 h-full flex flex-col group cursor-pointer transition-all duration-500 ease-in-out hover:flex-[2.5] md:hover:flex-[3]" onclick="openShowcase('travel', 'Travel & Landscapes', 'img/travel/IMG_0313.jpg')">
+        <div class="overflow-hidden bg-neutral-900 flex-1 relative border border-neutral-900 transition-colors group-hover:border-neutral-700">
+          <img src="img/travel/IMG_0313.jpg" alt="Travel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+        </div>
+        <div class="mt-1.5 md:mt-3 flex justify-between items-baseline mono-accent text-neutral-500">
+          <h3 class="text-neutral-200 font-sans font-medium tracking-normal text-sm capitalize truncate">Travel</h3>
+          <span class="text-[10px] group-hover:text-[#35d4c5] transition-colors whitespace-nowrap hidden sm:inline">[ View ]</span>
+        </div>
+      </div>
+
+      <!-- Pillar 6: Wildlife -->
+      <div class="flex-1 min-w-0 h-full flex flex-col group cursor-pointer transition-all duration-500 ease-in-out hover:flex-[2.5] md:hover:flex-[3]" onclick="openShowcase('wildlife', 'Wildlife & Nature', 'img/wildlife/.trashed-1786435813-snapseed__1783574461286.jpg')">
+        <div class="overflow-hidden bg-neutral-900 flex-1 relative border border-neutral-900 transition-colors group-hover:border-neutral-700">
+          <img src="img/wildlife/.trashed-1786435813-snapseed__1783574461286.jpg" alt="Wildlife" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+        </div>
+        <div class="mt-1.5 md:mt-3 flex justify-between items-baseline mono-accent text-neutral-500">
+          <h3 class="text-neutral-200 font-sans font-medium tracking-normal text-sm capitalize truncate">Wildlife</h3>
+          <span class="text-[10px] group-hover:text-[#35d4c5] transition-colors whitespace-nowrap hidden sm:inline">[ View ]</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CONTACT SCREEN LAYOUT ================= -->
+  <section id="contact" class="w-full bg-black border-t border-neutral-900 px-6 py-28 md:py-36 flex flex-col md:flex-row justify-between gap-16 max-w-7xl mx-auto">
+    
+    <!-- Left Hand: Copy Frame -->
+    <div class="md:w-1/2 space-y-4">
+      <p class="mono-accent text-neutral-500">Contact Me</p>
+      <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-100 max-w-sm leading-none">
+        Let’s create your next shoot.
+      </h2>
+      <p class="text-neutral-500 text-sm max-w-md leading-relaxed pt-2">
+        For bookings, collaborations, and media enquiries, drop a line via email or connect across my professional social frameworks.
+      </p>
+    </div>
+
+    <!-- Right Hand: Functional Social Link Triggers -->
+    <div class="md:w-1/3 space-y-4 flex flex-col justify-end">
+      <div class="space-y-1">
+        <p class="mono-accent text-neutral-500">Links</p>
+        <div class="pt-2">
+          <a href="mailto:abhishekj.121205@gmail.com" class="text-sm md:text-base font-medium text-neutral-300 hover:text-white transition-colors border-b border-neutral-900 hover:border-white pb-1">
+            Email: abhishekj.121205@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <a href="https://www.instagram.com/abhishould?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" class="text-xl md:text-2xl font-bold text-neutral-200 hover:text-[#35d4c5] transition-colors tracking-tight flex justify-between items-center group">
+          Instagram <span class="text-xs font-mono text-neutral-600 group-hover:text-[#35d4c5]">↗</span>
+        </a>
+        <a href="https://wa.me/919310020253" target="_blank" rel="noopener" class="text-xl md:text-2xl font-bold text-neutral-200 hover:text-[#35d4c5] transition-colors tracking-tight flex justify-between items-center group">
+          WhatsApp <span class="text-xs font-mono text-neutral-600 group-hover:text-[#35d4c5]">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= POP-UP SPACE OVERLAY MODAL ================= -->
+  <div id="showcaseModal" class="fixed inset-0 bg-black/95 z-50 hidden opacity-0 transition-opacity duration-500 flex flex-col">
+    <!-- Overlay Nav Control Bar -->
+    <div class="w-full px-6 py-4 flex justify-between items-center border-b border-neutral-900 bg-black mono-accent z-10">
+      <span id="modalHeaderTitle" class="text-white font-sans tracking-normal text-sm normal-case font-medium">Category Showcase</span>
+      <button onclick="closeShowcase()" class="text-neutral-500 hover:text-white transition-colors cursor-pointer text-xs uppercase tracking-widest font-mono">
+        [ Close × ]
+      </button>
+    </div>
+    
+    <!-- Main Modal Split Container -->
+    <div class="flex-1 flex flex-col md:flex-row overflow-hidden w-full relative">
+      <!-- Left Column: Pinned Banner -->
+      <div id="modalBanner" class="w-full md:w-full h-full relative overflow-hidden transition-all duration-[900ms] ease-in-out flex items-end bg-neutral-950 border-b md:border-b-0 md:border-r border-neutral-900/50">
+        <img id="modalBannerImg" src="" alt="Showcase Category" class="absolute inset-0 w-full h-full object-cover transition-all duration-1000" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent md:bg-gradient-to-r md:from-black/90 md:via-black/50 md:to-transparent z-[2]"></div>
+        <div class="relative z-[3] p-6 md:p-12 lg:p-16 max-w-xl space-y-2 md:space-y-4">
+          <p class="mono-accent text-[#35d4c5] text-xs font-bold tracking-wider">SHOWCASE</p>
+          <h2 id="modalBannerTitle" class="text-2xl md:text-4xl lg:text-5xl font-black tracking-tight text-white uppercase leading-none">
+            Category
+          </h2>
+        </div>
+      </div>
+      
+      <!-- Right Column: Pop Up Box Area -->
+      <div id="modalGridContainer" class="w-full md:w-0 h-0 md:h-full overflow-hidden opacity-0 transition-all duration-[900ms] ease-in-out bg-neutral-950/20 backdrop-blur-sm flex items-center justify-center p-4 md:p-8">
+        <!-- Pinned Dark Pop-up Box -->
+        <div id="modalGridBox" class="w-full max-w-5xl h-full md:h-[90%] bg-neutral-900/90 border border-neutral-800 rounded-xl shadow-2xl flex flex-col overflow-hidden transform translate-y-6 transition-all duration-[900ms] ease-out opacity-0">
+          <!-- Scrollable Grid Track -->
+          <div id="modalGridScroll" class="flex-1 overflow-y-auto modal-scroll p-6 md:p-8">
+            <div id="modalGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+              <!-- Dynamic Grid Photos go here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= VINTAGE NEWSPAPER STYLE ACHIEVEMENTS MODAL ================= -->
+  <div id="achievementsModal" class="fixed inset-0 bg-black/95 z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 md:p-8">
+    <div class="bg-[#f2efe6] text-[#1c1a17] max-w-4xl w-full h-[85vh] border-4 border-double border-[#2c2924] shadow-2xl flex flex-col font-serif overflow-hidden relative rounded-[2px]">
+      
+      <!-- Close Button Corner -->
+      <button onclick="closeAchievements()" class="absolute top-4 right-4 text-neutral-600 hover:text-black transition-colors cursor-pointer text-xs uppercase font-mono tracking-wider font-bold z-10">
+        [ Close × ]
+      </button>
+
+      <!-- Newspaper Header Frame -->
+      <div class="px-6 pt-8 pb-4 text-center select-none">
+        <h1 class="text-4xl md:text-5xl font-black tracking-tight text-[#1c1a17] uppercase font-serif border-b border-black pb-1 mb-2 select-none">
+          ACHIEVEMENTS
+        </h1>
+        <div class="border-t border-b-2 border-black py-1 px-4 flex justify-between items-center text-[9px] md:text-[11px] uppercase font-mono tracking-widest font-bold">
+          <span>Vol. I — No. I</span>
+          <span>New Delhi, India</span>
+        </div>
+      </div>
+
+      <!-- Column Grid Area -->
+      <div class="flex-1 overflow-y-auto modal-scroll px-6 pb-8 grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-neutral-400">
+        
+        <!-- Column 1: On-the-spot wins -->
+        <div class="space-y-4 pt-4 md:pt-0 md:px-2">
+          <h2 class="text-lg font-bold border-b border-black pb-1 uppercase tracking-tight leading-tight">
+            ON THE SPOT COMPETITIONS
+          </h2>
+          <div class="bg-white p-1 border border-black/20 shadow-sm">
+            <img src="img/achievements/1.jpeg" class="w-full aspect-[4/3] object-cover filter grayscale contrast-125 brightness-95" alt="Competitions Illustration" />
+          </div>
+          <p class="text-sm leading-relaxed text-justify font-serif">
+            Showcasing swift creative instinct and execution speed, Abhishek secured prestigious placements in highly competitive local student frames across various universities.
+          </p>
+          <ul class="space-y-1.5 text-sm font-bold border-t border-black/25 pt-3">
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-500">•</span>
+              <span>Sree Ram College of Commerce — 1st Prize</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-500">•</span>
+              <span>Sri Venkateshwara College — 1st Prize</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-500">•</span>
+              <span>Atma Ram Sanatan Dharm College — 1st Prize</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Online wins -->
+        <div class="space-y-4 pt-4 md:pt-0 md:pl-6 md:pr-2">
+          <h2 class="text-lg font-bold border-b border-black pb-1 uppercase tracking-tight leading-tight">
+            ONLINE COMPETITIONS
+          </h2>
+          <div class="bg-white p-1 border border-black/20 shadow-sm">
+            <img src="img/achievements/2.jpeg" class="w-full aspect-[4/3] object-cover filter grayscale contrast-125 brightness-95" alt="Online wins Illustration" />
+          </div>
+          <p class="text-sm leading-relaxed text-justify font-serif">
+            Recognized for digital portfolio curation and unique framing styles, Abhishek's online photography works were voted to premium ranks in digital showcases.
+          </p>
+          <ul class="space-y-1.5 text-sm font-bold border-t border-black/25 pt-3">
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-500">•</span>
+              <span>Gargi College — 2nd Prize</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-500">•</span>
+              <span>College — 3rd Prize</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Leadership -->
+        <div class="space-y-4 pt-4 md:pt-0 md:pl-6">
+          <h2 class="text-lg font-bold border-b border-black pb-1 uppercase tracking-tight leading-tight">
+            LEADERSHIP TENURE
+          </h2>
+          <div class="bg-white p-1 border border-black/20 shadow-sm">
+            <img src="img/achievements/3.jpeg" class="w-full aspect-[4/3] object-cover filter grayscale contrast-125 brightness-95" alt="Tenure Illustration" />
+          </div>
+          <p class="text-sm leading-relaxed text-justify font-serif">
+            Abhishek Jain steered the visual narrative and production department, heading the photography operations for 1 full year at The Sankalp Organisation.
+          </p>
+          <div class="border-t border-black/25 pt-3">
+            <p class="text-sm font-bold uppercase tracking-tight font-sans">
+              Head of Photography Department
+            </p>
+            <p class="text-[12px] italic text-neutral-600 mt-0.5">
+              January 2025 - January 2026, The Sankalp Organisation.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PORTFOLIO RUNTIME ENGINE SCRIPT ================= -->
+  <script>
+    // Localized Image Database Mapping array properties
+    const portfolioAssets = {
+      'formal-event': [
+        'img/formal-event/IMG_2379.jpg',
+        'img/formal-event/IMG_2414.jpg',
+        'img/formal-event/IMG_6262.jpg',
+        'img/formal-event/IMG_6586 (2).jpg',
+        'img/formal-event/IMG_6810.jpg',
+        'img/formal-event/IMG_6897.JPG',
+        'img/formal-event/IMG_6899.JPG',
+        'img/formal-event/IMG_6921.jpg',
+        'img/formal-event/IMG_7505.jpg'
+      ],
+      'parties': [
+        'img/parties/DSC_8933-2.jpg',
+        'img/parties/DSC_8935.JPG',
+        'img/parties/DSC_8963-2.jpg',
+        'img/parties/DSC_9062.JPG',
+        'img/parties/DSC_9102.JPG',
+        'img/parties/DSC_9109.JPG',
+        'img/parties/DSC_9119.JPG',
+        'img/parties/DSC_9231.JPG',
+        'img/parties/DSC_9291.JPG',
+        'img/parties/DSC_9334.JPG',
+        'img/parties/DSC_9359.JPG',
+        'img/parties/DSC_9478.JPG',
+        'img/parties/DSCF6589.JPG',
+        'img/parties/DSCF6596.JPG',
+        'img/parties/DSCF6644.JPG',
+        'img/parties/DSCF6699.JPG',
+        'img/parties/DSCF6811.JPG',
+        'img/parties/DSCF6877.JPG',
+        'img/parties/DSCF6936.JPG',
+        'img/parties/DSCF6939.JPG',
+        'img/parties/DSCF6972.JPG',
+        'img/parties/DSCF7314.JPG',
+        'img/parties/DSCF7327.JPG',
+        'img/parties/DSCF7343.JPG',
+        'img/parties/DSCF7363.JPG'
+      ],
+      'portraits': [
+        'img/portraits/_DSC6416.jpg',
+        'img/portraits/_DSC6450.jpg',
+        'img/portraits/_DSC6483.jpg',
+        'img/portraits/_DSC6678.jpg',
+        'img/portraits/1000237372.jpeg',
+        'img/portraits/1000237373 (1).jpeg',
+        'img/portraits/1742395462722.jpg',
+        'img/portraits/1742485510844.jpg',
+        'img/portraits/1742485550360.jpg',
+        'img/portraits/5_20260428_005244_0001.png',
+        'img/portraits/Abhishek jain_sbsec_silent stories.jpg',
+        'img/portraits/DSC_9149.JPG',
+        'img/portraits/DSC_9151.JPG',
+        'img/portraits/DSC_9254-2.jpg',
+        'img/portraits/DSC_9276.JPG',
+        'img/portraits/DSCF6385 (2).jpg',
+        'img/portraits/DSCF6387 (1).jpg',
+        'img/portraits/DSCF6390 (1).jpg',
+        'img/portraits/DSCF6393 (2).jpg',
+        'img/portraits/IMG_8401 (2).jpg',
+        'img/portraits/IMG_8424.jpg',
+        'img/portraits/IMG_8432 (1).jpg',
+        'img/portraits/IMG_8435.jpg',
+        'img/portraits/IMG_8984.jpg'
+      ],
+      'product': [
+        'img/product/DSC_9466.JPG',
+        'img/product/DSC_9468.JPG',
+        'img/product/DSCF7254.JPG',
+        'img/product/DSCF7373.JPG',
+        'img/product/DSCF7377.JPG',
+        'img/product/DSCF7391.JPG',
+        'img/product/IMG_0848.jpg'
+      ],
+      'travel': [
+        'img/travel/_DSC6524 (2).jpg',
+        'img/travel/_DSC6795-1.jpg',
+        'img/travel/1000145202.jpg',
+        'img/travel/1000228906.jpg',
+        'img/travel/1775381583195.jpg',
+        'img/travel/20260617_114807_0000.png',
+        'img/travel/4_20260308_164112_0003.png',
+        'img/travel/CAPTURING SUNSETS_20260310_201811_0000.png',
+        'img/travel/IMG_0313.jpg',
+        'img/travel/IMG_20250209_164736 (1).jpg',
+        'img/travel/IMG_20260622_112517_773 (2).jpg',
+        'img/travel/IMG-20250722-WA0103.jpg',
+        'img/travel/snapseed__1783405347845.jpg',
+        'img/travel/snapseed__1783405845813.jpg',
+        'img/travel/snapseed__1783429706341.jpg',
+        'img/travel/snapseed__1783490626467.jpg',
+        'img/travel/snapseed__1783575873706.jpg'
+      ],
+      'wildlife': [
+        'img/wildlife/.trashed-1786435813-snapseed__1783574461286.jpg',
+        'img/wildlife/1743687770460.jpg',
+        'img/wildlife/1743688816058.jpg',
+        'img/wildlife/Abhishek_sbsec_reflection.jpg',
+        'img/wildlife/IMG_0185 (2).jpg',
+        'img/wildlife/IMG_20231202_075617 (1).jpg',
+        'img/wildlife/IMG_20231218_124405 (2).jpg',
+        'img/wildlife/IMG_8748.jpg'
+      ]
+    };
+
+    async function loadDynamicImages(pillarId, existingList) {
+      const known = new Set(existingList);
+      const extensions = ['.jpg', '.png', '.jpeg', '.webp'];
+      const maxIndex = 20; // Probe files 1..20
+      
+      const probePromises = [];
+      for (let i = 1; i <= maxIndex; i++) {
+        extensions.forEach(ext => {
+          const path = `img/${pillarId}/${i}${ext}`;
+          if (!known.has(path)) {
+            probePromises.push(new Promise(resolve => {
+              const img = new Image();
+              img.onload = () => resolve(path);
+              img.onerror = () => resolve(null);
+              img.src = path;
+            }));
+          }
+        });
+      }
+      
+      const results = await Promise.all(probePromises);
+      const newImages = results.filter(path => path !== null);
+      
+      // Sort new images numerically if possible
+      newImages.sort((a, b) => {
+        const numA = parseInt(a.match(/\/(\d+)\./)?.[1] || 0);
+        const numB = parseInt(b.match(/\/(\d+)\./)?.[1] || 0);
+        return numA - numB;
+      });
+
+      return [...existingList, ...newImages];
+    }
+
+    async function openShowcase(pillarId, headingText, coverImageSrc) {
+      const targetModal = document.getElementById('showcaseModal');
+      const headerTitle = document.getElementById('modalHeaderTitle');
+      const banner = document.getElementById('modalBanner');
+      const bannerImg = document.getElementById('modalBannerImg');
+      const bannerTitle = document.getElementById('modalBannerTitle');
+      const gridContainer = document.getElementById('modalGridContainer');
+      const gridBox = document.getElementById('modalGridBox');
+      const grid = document.getElementById('modalGrid');
+      
+      headerTitle.innerText = headingText;
+      bannerTitle.innerText = headingText.replace(' Showcase', '').replace(' Portfolio', '').replace(' Collection', '').replace(' Gallery', '');
+      
+      // Clear grid contents and display loader
+      grid.innerHTML = '<div class="col-span-full py-12 text-center text-neutral-500 font-mono text-xs animate-pulse">Loading collection...</div>';
+      
+      // Get base images
+      let activePictures = portfolioAssets[pillarId] || [];
+      
+      // Dynamically probe for newly added sequential files (automatic updates!)
+      try {
+        activePictures = await loadDynamicImages(pillarId, activePictures);
+      } catch (err) {
+        console.warn("Dynamic probing error:", err);
+      }
+      
+      // The cover image is the passed coverImageSrc parameter if available, otherwise the first image in the folder
+      const coverImage = coverImageSrc || (activePictures.length > 0 ? activePictures[0] : '');
+      bannerImg.src = coverImage;
+      
+      grid.innerHTML = '';
+      
+      if (activePictures.length === 0) {
+        grid.innerHTML = `<p class="text-neutral-600 font-mono text-xs text-center col-span-full py-12">No images linked yet for this collection.</p>`;
+      } else {
+        activePictures.forEach((sourceUrl, index) => {
+          const imageCard = document.createElement('div');
+          imageCard.className = 'relative overflow-hidden bg-neutral-950 border border-neutral-900 hover:border-neutral-700 rounded-lg group/grid transition-all duration-500 opacity-0 scale-95';
+          
+          const imgEl = document.createElement('img');
+          imgEl.src = sourceUrl;
+          imgEl.className = 'w-full h-full object-cover transition-transform duration-700 ease-out group-hover/grid:scale-105';
+          imgEl.alt = `Showcase Grid Item ${index + 1}`;
+          
+          imgEl.onload = () => {
+            const ratio = imgEl.naturalWidth / imgEl.naturalHeight;
+            let gridSpan = 'col-span-1 aspect-square'; // default square
+            if (ratio > 1.2) {
+              // Horizontal (Landscape) -> take 2 columns width, standard landscape ratio
+              gridSpan = 'col-span-2 aspect-[3/2]';
+            } else if (ratio < 0.8) {
+              // Portrait (Vertical) -> take 1 column width, standard portrait ratio
+              gridSpan = 'col-span-1 aspect-[2/3]';
+            } else {
+              // Square/Nearly Square -> take 1 column width
+              gridSpan = 'col-span-1 aspect-square';
+            }
+            
+            imageCard.className = `relative overflow-hidden bg-neutral-950 border border-neutral-800 hover:border-neutral-700 rounded-lg group/grid transition-all duration-500 ${gridSpan}`;
+            
+            // Smooth stagger reveal
+            setTimeout(() => {
+              imageCard.classList.remove('opacity-0', 'scale-95');
+            }, index * 50);
+          };
+          
+          const overlay = document.createElement('div');
+          overlay.className = 'absolute inset-0 bg-black/40 opacity-0 group-hover/grid:opacity-100 transition-opacity duration-300 flex items-end p-4';
+          overlay.innerHTML = `
+            <span class="text-white font-mono text-[10px] uppercase tracking-wider bg-black/60 px-2.5 py-1 rounded-[2px] border border-neutral-800">
+              Image ${index + 1}
+            </span>
+          `;
+          
+          imageCard.appendChild(imgEl);
+          imageCard.appendChild(overlay);
+          grid.appendChild(imageCard);
+        });
+      }
+
+      // 1. Reset Modal State to Centered / Full Cover before transition
+      targetModal.classList.remove('hidden');
+      
+      banner.className = 'w-full md:w-full h-full relative overflow-hidden transition-all duration-[900ms] ease-in-out flex items-end bg-neutral-950 border-b md:border-b-0 md:border-r border-neutral-900/50';
+      gridContainer.className = 'w-full md:w-0 h-0 md:h-full overflow-hidden opacity-0 transition-all duration-[900ms] ease-in-out bg-neutral-950/20 backdrop-blur-sm flex items-center justify-center p-4 md:p-8';
+      gridBox.className = 'w-full max-w-5xl h-full md:h-[90%] bg-neutral-900/90 border border-neutral-800 rounded-xl shadow-2xl flex flex-col overflow-hidden transform translate-y-6 transition-all duration-[900ms] ease-out opacity-0';
+      
+      document.body.style.overflow = 'hidden';
+
+      // 2. Trigger smooth entry opacity fade
+      setTimeout(() => {
+        targetModal.classList.add('opacity-100');
+      }, 50);
+
+      // 3. Trigger the Glide and Pin transition
+      setTimeout(() => {
+        banner.className = 'w-full md:w-[32%] h-[35vh] md:h-full relative overflow-hidden transition-all duration-[900ms] ease-in-out flex items-end bg-neutral-950 border-b md:border-b-0 md:border-r border-neutral-900/50';
+        gridContainer.className = 'w-full md:w-[68%] h-[65vh] md:h-full overflow-hidden opacity-100 transition-all duration-[900ms] ease-in-out bg-neutral-950/20 backdrop-blur-sm flex items-center justify-center p-4 md:p-8';
+        gridBox.className = 'w-full max-w-5xl h-full md:h-[90%] bg-neutral-900/90 border border-neutral-800 rounded-xl shadow-2xl flex flex-col overflow-hidden transform translate-y-0 transition-all duration-[900ms] ease-out opacity-100';
+      }, 200);
+    }
+
+    function closeShowcase() {
+      const targetModal = document.getElementById('showcaseModal');
+      const banner = document.getElementById('modalBanner');
+      const gridContainer = document.getElementById('modalGridContainer');
+      const gridBox = document.getElementById('modalGridBox');
+      
+      // Reverse transition back to center/collapsed before closing
+      banner.className = 'w-full md:w-full h-full relative overflow-hidden transition-all duration-[600ms] ease-in-out flex items-end bg-neutral-950 border-b md:border-b-0 md:border-r border-neutral-900/50';
+      gridContainer.className = 'w-full md:w-0 h-0 md:h-full overflow-hidden opacity-0 transition-all duration-[600ms] ease-in-out bg-neutral-950/20 backdrop-blur-sm flex items-center justify-center p-4 md:p-8';
+      gridBox.className = 'w-full max-w-5xl h-full md:h-[90%] bg-neutral-900/90 border border-neutral-800 rounded-xl shadow-2xl flex flex-col overflow-hidden transform translate-y-6 transition-all duration-[600ms] ease-out opacity-0';
+      
+      targetModal.classList.remove('opacity-100');
+      setTimeout(() => {
+        targetModal.classList.add('hidden');
+      }, 600);
+      document.body.style.overflow = '';
+    }
+
+    function openAchievements() {
+      const modal = document.getElementById('achievementsModal');
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.add('opacity-100');
+      }, 50);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAchievements() {
+      const modal = document.getElementById('achievementsModal');
+      modal.classList.remove('opacity-100');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+      document.body.style.overflow = '';
+    }
+  </script>
+</body>
+</html>
